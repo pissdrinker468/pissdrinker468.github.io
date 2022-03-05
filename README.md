@@ -1,2 +1,2 @@
 # pissdrinker468.github.io
-My personnal website
+Projet débile de NSI j'utilise Github Pages pour host
