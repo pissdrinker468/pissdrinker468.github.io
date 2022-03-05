@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
+/* 1. On utilise cette police type script après l'avoir importée par défaut pour toute la page*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,body {
+    font-family: 'Inconsolata', sans-serif;
+    color: #cfc5bc;
+    font-weight: 400;
+    font-size: 21px;
+    background-color: #e4dfda;
+}
+
+/* 2. Paramètres du header, intégration d'une image avec opacité basse qui se mélange avec la couleur du header + Texte avec police coréene et 3d*/
+
+header {
+    background: #062d3b ;
+    margin: -8px;
+    padding : 0px;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 95px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 49.5%;
+    transform: translate(-50%, -50%);
+    bottom: -650px;
+    color: #FFFFFF;
+    text-shadow: 0px 0px 0 rgb(188,178,169),
+                 1px 1px 0 rgb(170,160,151),
+                 2px 2px 0 rgb(151,141,132),
+                 3px 3px 0 rgb(133,123,114),
+                 4px 4px 0 rgb(114,104,95),
+                 5px 5px 0 rgb(96,86,77),
+                 6px 6px 0 rgb(77,67,58),
+                 7px 7px  0 rgb(58,48,39),
+                 8px 8px 7px rgba(14,61,102,1),
+                 8px 8px 1px rgba(14,61,102,0.5),
+                 0px 0px 7px rgba(14,61,102,.2);
+                 /* ce serait quand meme dommage de pas utiliser un generateur pour faire le texte */
+}
+
+.image-header {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    opacity: 0.3;
+}
+
+/* 3. Menu de Navigation + Animation quand on passe la souris dessus */
+
+nav {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    background-color: #070F2E
+}
+
+nav a {
+    color: #cfc5bc;
+    padding-right: 8px;
+    padding-left: 8px;
+    text-decoration: none;
+}
+
+/* Animation pour que le texte se souligne temporairement de gauche a droite quand on passe le pointeur de la souris dessus parce que le menu fait vide sinon */
+
+.animationsouslignage {
+  display: inline-block;
+  position: relative;
+}
+
+.animationsouslignage:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #cfc5bc;
+  transform-origin: bottom right;
+  transition: transform 0.32s ease-in;
+}
+
+.animationsouslignage:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* 4. Paramètre pour le texte dans la section (body) */
+
+h2 {
+    font-weight: 600;
+    font-size: 42px;
+    text-align: center;
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+
+h3 {
+    font-size: 26px;
+}
+
+section {
+    max-width: 1050px;
+    margin: 2em auto 4em;
+    color: #000205 ;
+    font-size: 21px;
+    line-height: 1.6;
+}
+
+.liensection {
+    color: #000205;
+    text-decoration: none;
+}
+
+.imagesection {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    filter: brightness(85%);
+    -webkit-animation: fadein 2s; 
+    -moz-animation: fadein 2s; 
+     -ms-animation: fadein 2s; 
+      -o-animation: fadein 2s; 
+         animation: fadein 2s;
+}
+
+.imagesectionpetit {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    filter: brightness(85%);
+    -webkit-animation: fadein 2s; 
+    -moz-animation: fadein 2s; 
+     -ms-animation: fadein 2s; 
+      -o-animation: fadein 2s; 
+         animation: fadein 2s;
+}
+
+.texteimage {
+    text-align: center;
+    max-width: 550px;
+    margin: auto;
+    font-size: 18px;
+    color: #3F474F;
+    position: relative;
+    top: -10px;
+}
+
+
+/* Animation fondu quand on recharge la page (de base je voulais mettre un truc ou quand on scroll le texte vient vers le haut et fait un fondu pour chaque paragraphe mais y'avait pas le droit au js
+dc j'ai que ca désolé), paramètres pour chaque navigateur */
+
+p, h3, li {
+    -webkit-animation: fadein 2s; 
+       -moz-animation: fadein 2s; 
+        -ms-animation: fadein 2s; 
+         -o-animation: fadein 2s; 
+            animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* 5. Système de Boite débile avec étiquettes pour les groupes de la page 2 (attention code de porc) CONTIENT DONC TECHNIQUEMENT DES LISTES */
+
+.structureliste {
+    list-style: none;
+    margin-top: 35px;
+}
+
+.card {
+    max-width: 990px ;
+    display: flex;
+    background-color: #fff9f4;
+    margin-bottom: 40px;
+    outline-color: #000205;
+    outline-style: solid;
+    outline-width: 2px;
+  }
+  
+.image {
+    width: 30%;
+    display: flex;
+    align-items: center;
+  }
+
+.image img {
+    width: 100%;
+    height: 100%;
+  }
+  
+.info {
+    flex: 1;
+    margin-left: 38px;
+    color: #000205;
+  }
+  
+.info p {
+    font-size: 19px;
+    line-height: 1.6;
+  }
+
+h4 {
+    font-size: 40px;
+    margin-top: 25px;
+}
+
+.interieurboite {
+    max-width: 610px;
+    margin-top: -40px;
+}
+
+.tag {
+    float:left;
+    padding-right: 20px;
+    text-align: center;
+    list-style-type: none;
+    margin-block-start: 0;
+    margin-right: 1em;
+    padding-inline-start: 0;
+    background: #c0bab0;
+    padding: 2px 12px;
+}
+
+/* 6. Footer Informations */
+
+.textefooter {
+    background-color: #062d3b;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: block;
+    margin: -8px;
+    text-align: center;
+}
